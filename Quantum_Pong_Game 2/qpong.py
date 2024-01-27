@@ -1,19 +1,23 @@
-
-import imp
 import pygame
 from assets.circuit_grid import CircuitGrid
-from assets import globals, ui, paddle, ball, computer
-import assets.scene
+from assets import globals, ui, paddle, ball, computer, qpong_setup
 
 pygame.init()
-screen = pygame.display.set_mode((1200, 750)) #sets the pixel display (1200 by 750 pixels
-pygame.display.set_caption('WSSU Quantum Pong Game') #assigns a name to the title of the window
+screen = pygame.display.set_mode((1200, 750))
+pygame.display.set_caption('WSSU Quantum Pong Game')
 clock = pygame.time.Clock()
 
+def setup_game():
+    num_qubits = qpong_setup.SetupScreen().setup_screen()
+    return num_qubits
+
 def main():
+    num_qubits = setup_game()
+    globals.NUM_QUBITS = num_qubits
+
     # initialize game
-    circuit_grid = CircuitGrid(5, globals.FIELD_HEIGHT)
-    classical_paddle = paddle.Paddle(9*globals.WIDTH_UNIT)
+    circuit_grid = CircuitGrid(num_qubits, globals.FIELD_HEIGHT)
+    classical_paddle = paddle.Paddle(9 * globals.WIDTH_UNIT)
     classical_computer = computer.ClassicalComputer(classical_paddle)
     quantum_paddles = paddle.QuantumPaddles(globals.WINDOW_WIDTH - 9 * globals.WIDTH_UNIT)
     quantum_computer = computer.QuantumComputer(quantum_paddles, circuit_grid)
@@ -22,9 +26,6 @@ def main():
     moving_sprites.add(classical_paddle)
     moving_sprites.add(quantum_paddles.paddles)
     moving_sprites.add(pong_ball)
-    scene = assets.scene.Scene.start(screen, assets.ball, pong_ball)
-
-    input.running = scene.start(screen, ball)
 
     exit = False
     while not exit:
@@ -39,9 +40,7 @@ def main():
         classical_computer.update(pong_ball)
         quantum_computer.update(pong_ball)
 
-
-
-        #draw game9
+        # draw game
         screen.fill(globals.BLACK)
 
         if classical_computer.score >= globals.WIN_SCORE:
@@ -50,7 +49,7 @@ def main():
             ui.draw_win_scene(screen)
         else:
             circuit_grid.draw(screen)
-            ui.draw_statevector_grid(screen)
+            ui.draw_statevector_grid(screen, num_qubits)
             ui.draw_score(screen, classical_computer.score, quantum_computer.score)
             ui.draw_dashed_line(screen)
             moving_sprites.draw(screen)
@@ -59,6 +58,5 @@ def main():
         # set framerate
         clock.tick(60)
 
-
-if __name__== '__main__':
+if __name__ == '__main__':
     main()
