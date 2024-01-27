@@ -16,7 +16,12 @@ def main():
     globals.NUM_QUBITS = num_qubits
 
     # initialize game
-    circuit_grid = CircuitGrid(num_qubits, globals.FIELD_HEIGHT)
+    xpos = 500
+    ypos = 1
+    print("hello")
+    print(num_qubits)
+    print(globals.FIELD_HEIGHT)
+    circuit_grid = CircuitGrid(ypos, xpos, num_qubits)
     classical_paddle = paddle.Paddle(9 * globals.WIDTH_UNIT)
     classical_computer = computer.ClassicalComputer(classical_paddle)
     quantum_paddles = paddle.QuantumPaddles(globals.WINDOW_WIDTH - 9 * globals.WIDTH_UNIT)
@@ -49,7 +54,7 @@ def main():
             ui.draw_win_scene(screen)
         else:
             circuit_grid.draw(screen)
-            ui.draw_statevector_grid(screen, num_qubits)
+            ui.draw_statevector_grid(screen)
             ui.draw_score(screen, classical_computer.score, quantum_computer.score)
             ui.draw_dashed_line(screen)
             moving_sprites.draw(screen)

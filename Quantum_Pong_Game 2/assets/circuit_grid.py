@@ -18,12 +18,12 @@ MOVE_DOWN = 4
 
 class CircuitGrid(pygame.sprite.RenderPlain):
     """Enables interaction with circuit"""
-    def __init__(self, xpos, ypos, num_qubits):
+    def __init__(self, xpos, ypos):
         self.xpos = xpos
         self.ypos = ypos
         self.selected_wire = 0
         self.selected_column = 0
-        self.model = CircuitGridModel(num_qubits,16)
+        self.model = CircuitGridModel(globals.NUM_QUBITS,16)
         self.circuit_grid_background = CircuitGridBackground(self.model)
         self.circuit_grid_cursor = CircuitGridCursor()
         self.gate_tiles = np.empty((self.model.max_wires,
