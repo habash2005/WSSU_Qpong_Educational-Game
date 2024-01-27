@@ -4,10 +4,10 @@ import qiskit
 
 from . import globals, resources, node_types
 
-GRID_WIDTH = 66
-GRID_HEIGHT = 66
-GATE_TILE_WIDTH = 43
-GATE_TILE_HEIGHT = 45
+GRID_WIDTH = 50
+GRID_HEIGHT = 50
+GATE_TILE_WIDTH = 30
+GATE_TILE_HEIGHT = 30
 LINE_WIDTH = 1
 
 # navigation
@@ -23,7 +23,7 @@ class CircuitGrid(pygame.sprite.RenderPlain):
         self.ypos = ypos
         self.selected_wire = 0
         self.selected_column = 0
-        self.model = CircuitGridModel(globals.NUM_QUBITS,16)
+        self.model = CircuitGridModel(num_qubits,16)
         self.circuit_grid_background = CircuitGridBackground(self.model)
         self.circuit_grid_cursor = CircuitGridCursor()
         self.gate_tiles = np.empty((self.model.max_wires,
