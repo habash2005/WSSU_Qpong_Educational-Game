@@ -1,24 +1,17 @@
 from . import globals, resources
 import pygame
 
-def draw_statevector_grid(screen):
+def draw_statevector_grid(screen, num_qubits):
     font = resources.Font()
-    basis_states = [
-        '|000>',
-        '|001>',
-        '|010>',
-        '|011>',
-        '|100>',
-        '|101>',
-        '|110>',
-        '|111>'
-    ]
-    statevector_height = int(round(globals.FIELD_HEIGHT / len(basis_states))) #8 basis states
+    
+    basis_states = [format(i, f'0{num_qubits}b') for i in range(2**num_qubits)]
+    
+    statevector_height = int(round(globals.FIELD_HEIGHT / len(basis_states)))
 
     for i in range(len(basis_states)):
-        text = font.vector_font.render(basis_states[i], 1, globals.RED)
-        screen.blit(text, (globals.WINDOW_WIDTH - text.get_width(),
-                            i*statevector_height + text.get_height()))
+        state_label = '|' + basis_states[i] + '>'
+        text = font.vector_font.render(state_label, 1, globals.RED)
+        screen.blit(text, (globals.WINDOW_WIDTH - text.get_width(), i * statevector_height + text.get_height()))
 
 def draw_score(screen, classical_score, quantum_score):
     font = resources.Font()

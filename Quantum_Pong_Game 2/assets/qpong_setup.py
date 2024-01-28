@@ -12,7 +12,7 @@ class SetupScreen:
         self.font = pygame.font.Font(None, 36)
         self.clock = pygame.time.Clock()
 
-        self.qubits = 3  # Default number of qubits
+        self.qubits = 1  # Default number of qubits
 
     def setup_screen(self):
         while True:

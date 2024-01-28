@@ -51,7 +51,7 @@ def main():
             ui.draw_win_scene(screen)
         else:
             circuit_grid.draw(screen)
-            ui.draw_statevector_grid(screen)
+            ui.draw_statevector_grid(screen, num_qubits)
             ui.draw_score(screen, classical_computer.score, quantum_computer.score)
             ui.draw_dashed_line(screen)
             moving_sprites.draw(screen)
