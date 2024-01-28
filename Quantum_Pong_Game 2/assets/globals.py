@@ -1,4 +1,5 @@
 # colors
+RED = 255, 28, 0
 WHITE = 255, 255, 255
 BLACK = 0, 0, 0
 MAGENTA = 255, 0, 255

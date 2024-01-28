@@ -18,9 +18,6 @@ def main():
     # initialize game
     xpos = 500
     ypos = 1
-    print("hello")
-    print(num_qubits)
-    print(globals.FIELD_HEIGHT)
     circuit_grid = CircuitGrid(ypos, xpos, num_qubits)
     classical_paddle = paddle.Paddle(9 * globals.WIDTH_UNIT)
     classical_computer = computer.ClassicalComputer(classical_paddle)
