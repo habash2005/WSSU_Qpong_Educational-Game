@@ -16,14 +16,17 @@ class SetupScreen:
 
     def setup_screen(self):
         while True:
-            self.screen.fill((255, 255, 255))
+            self.screen.fill((0, 0, 0))
 
             # Display instructions and current number of qubits
-            text = self.font.render("Use UP/DOWN arrows to set qubits", True, (0, 0, 0))
-            self.screen.blit(text, (50, 50))
+            text = self.font.render("WSSU Quantum Education Game: ", True, (255, 28, 0))
+            self.screen.blit(text, (400, 50))
 
-            text = self.font.render(f"Number of Qubits: {self.qubits}", True, (0, 0, 0))
-            self.screen.blit(text, (50, 100))
+            text = self.font.render("Use UP/DOWN arrows to set qubits", True, (255, 28, 0))
+            self.screen.blit(text, (400, 100))
+
+            text = self.font.render(f"Number of Qubits: {self.qubits}", True, (255, 28, 0))
+            self.screen.blit(text, (400, 150))
 
             pygame.display.flip()
 
