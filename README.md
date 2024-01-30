@@ -10,9 +10,9 @@ To learn more about Quantum gates and their vector states
  C - control gate (Must use Z,Y,X in order to use this)
 
 
-Credits for original program / Idea 
-Junye Huang
+Credits for original program / Idea:  
+Junye Huang (original creator of qpong game)
 
-Program modification credits 
-Ahmad Hijaz
+Program modification credits: 
+Ahmad Hijaz,
 Makayla Morgan
