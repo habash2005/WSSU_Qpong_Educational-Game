@@ -1,5 +1,6 @@
 import pygame
 from pygame.locals import *
+from . import globals, resources
 
 class SetupScreen:
     def __init__(self):
@@ -19,14 +20,17 @@ class SetupScreen:
             self.screen.fill((0, 0, 0))
 
             # Display instructions and current number of qubits
-            text = self.font.render("WSSU Quantum Education Game: ", True, (255, 28, 0))
-            self.screen.blit(text, (400, 50))
+            font = resources.Font()
 
-            text = self.font.render("Use UP/DOWN arrows to set qubits", True, (255, 28, 0))
-            self.screen.blit(text, (400, 100))
 
-            text = self.font.render(f"Number of Qubits: {self.qubits}", True, (255, 28, 0))
-            self.screen.blit(text, (400, 150))
+            text = font.player_font.render("WSSU Quantum Education Game: ", True, (255, 28, 0))
+            self.screen.blit(text, (350, 50))
+
+            text = font.player_font.render("Use UP/DOWN arrows to set qubits", True, (255, 28, 0))
+            self.screen.blit(text, (350, 100))
+
+            text = font.player_font.render(f"Number of Qubits: {self.qubits}", True, (255, 28, 0))
+            self.screen.blit(text, (350, 150))
 
             pygame.display.flip()
 
