@@ -8,3 +8,11 @@ To learn more about Quantum gates and their vector states
  Y - Pauli y
  X - X gate (NOT gate)
  C - control gate (Must use Z,Y,X in order to use this)
+
+
+Credits for original program / Idea 
+Junye Huang
+
+Program modification credits 
+Ahmad Hijaz
+Makayla Morgan
