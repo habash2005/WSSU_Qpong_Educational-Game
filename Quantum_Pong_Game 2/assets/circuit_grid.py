@@ -4,7 +4,7 @@ import qiskit
 
 from . import globals, resources, node_types
 
-GRID_WIDTH = 50
+GRID_WIDTH = 70
 GRID_HEIGHT = 50
 GATE_TILE_WIDTH = 30
 GATE_TILE_HEIGHT = 30

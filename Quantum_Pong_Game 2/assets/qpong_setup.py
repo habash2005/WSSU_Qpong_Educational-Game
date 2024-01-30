@@ -7,7 +7,7 @@ class SetupScreen:
         pygame.init()
 
         # Set up Pygame window for setup
-        self.screen = pygame.display.set_mode((1200, 750))
+        self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         pygame.display.set_caption("Quantum Pong Setup")
 
         self.font = pygame.font.Font(None, 36)

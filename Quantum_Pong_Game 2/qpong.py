@@ -3,7 +3,7 @@ from assets.circuit_grid import CircuitGrid
 from assets import globals, ui, paddle, ball, computer, qpong_setup
 
 pygame.init()
-screen = pygame.display.set_mode((1200, 750))
+screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 pygame.display.set_caption('WSSU Quantum Pong Game')
 clock = pygame.time.Clock()
 
@@ -16,7 +16,7 @@ def main():
     globals.NUM_QUBITS = num_qubits
 
     # initialize game
-    xpos = 500
+    xpos = 700
     ypos = 1
     circuit_grid = CircuitGrid(ypos, xpos, num_qubits)
     classical_paddle = paddle.Paddle(9 * globals.WIDTH_UNIT)
