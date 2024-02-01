@@ -26,10 +26,10 @@ class SetupScreen:
             text = font.player_font.render("WSSU Quantum Education Game: ", True, (255, 28, 0))
             self.screen.blit(text, (350, 300))
 
-            text = font.player_font.render("Use UP/DOWN arrows to set qubits", True, (255, 28, 0))
+            text = font.player_font.render("Use UP / DOWN arrows to set qubits", True, (255, 28, 0))
             self.screen.blit(text, (350, 400))
 
-            text = font.player_font.render(f"Number of Qubits: {self.qubits}", True, (255, 28, 0))
+            text = font.player_font.render(f"Number of Qubits U+FF1A {self.qubits}", True, (255, 28, 0))
             self.screen.blit(text, (350, 500))
 
             pygame.display.flip()

@@ -27,9 +27,9 @@ def load_font(name, size=2 * globals.WIDTH_UNIT):
 
 class Font:
     def __init__(self):
-        self.gameover_font = load_font("bit5x3.ttf", 10 * globals.WIDTH_UNIT)
-        self.credit_font = load_font("bit5x3.ttf", 2 * globals.WIDTH_UNIT)
-        self.replay_font = load_font("bit5x3.ttf", 5 * globals.WIDTH_UNIT)
-        self.score_font = load_font("bit5x3.ttf", 12 * globals.WIDTH_UNIT)
-        self.vector_font = load_font("bit5x3.ttf", 3 * globals.WIDTH_UNIT)
-        self.player_font = load_font("bit5x3.ttf", 3 * globals.WIDTH_UNIT)
+        self.gameover_font = load_font("GayoLandRounded-OGZGp.ttf", 10 * globals.WIDTH_UNIT)
+        self.credit_font = load_font("GayoLandRounded-OGZGp.ttf", 2 * globals.WIDTH_UNIT)
+        self.replay_font = load_font("GayoLandRounded-OGZGp.ttf", 5 * globals.WIDTH_UNIT)
+        self.score_font = load_font("GayoLandRounded-OGZGp.ttf", 12 * globals.WIDTH_UNIT)
+        self.vector_font = load_font("GayoLandRounded-OGZGp.ttf", 3 * globals.WIDTH_UNIT)
+        self.player_font = load_font("GayoLandRounded-OGZGp.ttf", 3 * globals.WIDTH_UNIT)

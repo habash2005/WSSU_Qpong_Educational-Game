@@ -17,19 +17,19 @@ def draw_score(screen, classical_score, quantum_score):
     font = resources.Font()
 
     text = font.player_font.render("Classical Computer", 1, globals.RED)
-    text_pos = text.get_rect(center = (globals.WINDOW_WIDTH*0.3, globals.WIDTH_UNIT*2))
+    text_pos = text.get_rect(center = (globals.WINDOW_WIDTH*0.3, globals.WIDTH_UNIT*4))
     screen.blit(text, text_pos)
 
     text = font.score_font.render(str(classical_score), 1, globals.RED)
-    text_pos = text.get_rect(center=(globals.WINDOW_WIDTH*0.3, globals.WIDTH_UNIT*8))
+    text_pos = text.get_rect(center=(globals.WINDOW_WIDTH*0.3, globals.WIDTH_UNIT*15))
     screen.blit(text, text_pos)
 
     text = font.player_font.render("Quantum Computer", 1, globals.RED)
-    text_pos = text.get_rect(center = (globals.WINDOW_WIDTH*0.7, globals.WIDTH_UNIT*2))
+    text_pos = text.get_rect(center = (globals.WINDOW_WIDTH*0.7, globals.WIDTH_UNIT*4))
     screen.blit(text, text_pos)
 
     text = font.score_font.render(str(quantum_score), 1, globals.RED)
-    text_pos = text.get_rect(center=(globals.WINDOW_WIDTH*0.7, globals.WIDTH_UNIT*8))
+    text_pos = text.get_rect(center=(globals.WINDOW_WIDTH*0.7, globals.WIDTH_UNIT*15))
     screen.blit(text, text_pos)
 
 def draw_dashed_line(screen):
