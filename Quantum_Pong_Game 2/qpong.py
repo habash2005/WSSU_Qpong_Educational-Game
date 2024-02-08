@@ -58,7 +58,7 @@ def main():
         pygame.display.flip()
 
         # set framerate
-        clock.tick(60)
+        clock.tick(50)
 
 if __name__ == '__main__':
     main()
