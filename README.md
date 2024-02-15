@@ -15,7 +15,7 @@ install anaconda for environment purposes
 
 create environment
 
-conda cre
+conda create -n (Environment name)
 
 Run environment 
 
